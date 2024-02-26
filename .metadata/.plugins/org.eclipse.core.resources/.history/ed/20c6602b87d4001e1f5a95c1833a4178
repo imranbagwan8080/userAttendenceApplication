@@ -1,0 +1,36 @@
+package com.app.service;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dao.AttendenceDao;
+import com.app.dao.UserDao;
+import com.app.dto.AttendenceDto;
+import com.app.dto.Converterdto;
+import com.app.dto.UserDto;
+import com.app.pojo.Attendence;
+import com.app.pojo.User;
+
+@Service
+@jakarta.transaction.Transactional
+public class AttendenceService {
+    
+	@Autowired
+	public AttendenceDao attendenceDao;
+	
+
+	@Autowired
+	public ModelMapper mapper;
+	
+	
+	public User addAttendenceSignInTime(AttendenceDto at) {
+
+		Converterdto dto = new Converterdto();
+//		User u = dto.toUser(user);
+//		User u1 = userdao.save(u);
+		
+		
+		return u1;
+	}
+}

@@ -1,0 +1,44 @@
+package com.app.pojo;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "user")
+@ToString
+public class User extends CommonEntity{
+
+	@Column(unique = true, nullable = false)
+	private String email;
+	@Column(nullable = false)
+	private String password;
+	
+	
+	@Column(length=25,nullable = false)
+	private String userName;
+	
+	@Column(length = 10, nullable = false)
+	private long mobNo;
+	
+	@Column(length=25,nullable = false)
+	private String userRole;
+
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	private List<Attendence> attendence = new ArrayList<>();
+}

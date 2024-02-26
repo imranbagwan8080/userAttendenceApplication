@@ -1,0 +1,51 @@
+package com.app.service;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.app.dao.AttendenceDao;
+import com.app.dao.UserDao;
+import com.app.dto.AttendenceDto;
+import com.app.dto.Converterdto;
+import com.app.dto.UserDto;
+import com.app.pojo.Attendence;
+import com.app.pojo.User;
+
+@Service
+@jakarta.transaction.Transactional
+public class AttendenceService {
+    
+	@Autowired
+	public AttendenceDao attendenceDao;
+	
+	@Autowired
+	public UserDao userDao;
+
+	@Autowired
+	public ModelMapper mapper;
+	
+	
+	public Attendence addAttendenceSignInTime(int id) {
+        User u = userDao.findById(id);
+        
+		Converterdto dto = new Converterdto();
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");//create new date for comparision with all date in orders 
+		Date dateWithoutTime = sdf.parse(sdf.format(new Date()));
+		System.out.println(dateWithoutTime);
+		
+		long longTime = System.currentTimeMillis();
+		Date singInTime = new Date(longTime);
+		
+		
+//		User u = dto.toUser(user);
+//		User u1 = userdao.save(u);
+		
+		
+		return ;
+	}
+}

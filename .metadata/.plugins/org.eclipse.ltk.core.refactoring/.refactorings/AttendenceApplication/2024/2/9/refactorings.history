@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;custom_exceptions.RescourceNotFoundException.java&apos; to &apos;ResourceNotFoundException.java&apos;&#x0D;&#x0A;- Original project: &apos;AttendenceApplication&apos;&#x0D;&#x0A;- Original element: &apos;custom_exceptions.RescourceNotFoundException.java&apos;&#x0D;&#x0A;- Renamed element: &apos;custom_exceptions.ResourceNotFoundException.java&apos;" description="Rename compilation unit &apos;RescourceNotFoundException.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;custom_exceptions{RescourceNotFoundException.java" name="ResourceNotFoundException.java" references="false" stamp="1708929870971" version="1.0"/>
+</session>

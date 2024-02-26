@@ -1,0 +1,42 @@
+package com.app.pojo;
+
+import java.util.Date;
+
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "attendence")
+public class Attendence extends CommonEntity{
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "payment_time")
+	private Date singInTime;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "payment_time")
+	private Date signOutTime;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "date")
+	private Date date;  
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
+}

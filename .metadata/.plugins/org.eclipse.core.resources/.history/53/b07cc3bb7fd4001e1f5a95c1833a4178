@@ -1,0 +1,22 @@
+package com.app.dto;
+
+import com.app.pojo.User;
+
+public class Converterdto {
+     
+	
+	public User toUser(UserDto dto)
+	{
+		User entity = new User();
+		entity.setId(dto.getId());
+		entity.setEmail(dto.getEmail());
+		entity.setPassword(dto.getPassword());
+		entity.setUserName(dto.getUserName());
+		
+		entity.setMobNo(dto.getMobNo());
+		
+		
+		return entity;
+		
+	}
+}
